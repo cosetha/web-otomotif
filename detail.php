@@ -43,7 +43,7 @@ if(isset($_GET['detail'])){
           <!-- Nav -->
           <nav id="nav">
             <ul>
-              <li class="current"><a href="index.html">Home</a></li>
+              <li class="current"><a href="index.php">Home</a></li>
             </ul>
           </nav>
         </header>
@@ -58,7 +58,7 @@ if(isset($_GET['detail'])){
             ?>
             <div class="col-4 col-12-medium">
               <div id="sidebar">            
-                <section><br /><img src="images/c-3.jpg" alt="" /></section>
+                <section><br /><img src="<?php echo $rows[0]['thumbnail'] ?>" alt="" /></section>
               </div>
             </div>
             <div class="col-8 col-12-medium imp-medium">
@@ -66,10 +66,10 @@ if(isset($_GET['detail'])){
                 <!-- Content -->
                 <article>
                   <br />
-                  <h2><?php echo $rows[0]['judul'] ?></h2>
+                  <h2><?php echo $rows[0]['judul'] ?></h2> <h5 class="text-muted">Tanggal: <?php $date=date_create($rows[0]['tanggal']); echo date_format($date,"D,d M Y"); ?></h5>
 
                   <?php echo $rows[0]['deskripsi'] ?>
-
+                  <p class="text-muted">Creator: <?php echo $rows[0]['creator'] ?></p>
                 </article>
               </div>
             </div>
